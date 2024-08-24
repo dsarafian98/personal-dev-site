@@ -28,10 +28,12 @@ import {Context} from './src/Context';
 import Home from './src/pages/Home';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import Feed from './src/pages/Feed';
 
 function App(): React.JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
-  const Stack = createNativeStackNavigator();
+  const Tab = createBottomTabNavigator();
   const context = useContext(Context);
 
   const backgroundStyle = {
@@ -43,9 +45,10 @@ function App(): React.JSX.Element {
     <View style={backgroundStyle}>
       <Context.Provider value={context}>
         <NavigationContainer>
-          <Stack.Navigator>
-            <Stack.Screen name="Home" component={Home} />
-          </Stack.Navigator>
+          <Tab.Navigator>
+            <Tab.Screen name="Home" component={Home} />
+            <Tab.Screen name="Feed" component={Feed} />
+          </Tab.Navigator>
         </NavigationContainer>
       </Context.Provider>
     </View>

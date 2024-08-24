@@ -18,17 +18,4 @@ function Home(): React.JSX.Element {
   );
 }
 
-// function Home() {
-//   //const context = useContext(Context);
-
-//   return (
-//     <SafeAreaView>
-//       <Text>hello world</Text>
-//       {/* <Context.Consumer>
-//         <Text> {'hi'} </Text>
-//       </Context.Consumer> */}
-//     </SafeAreaView>
-//   );
-// }
-
 export default Home;
