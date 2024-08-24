@@ -1,3 +1,12 @@
-import {createContext} from 'react';
+import {createContext, useState} from 'react';
 
-export const Context = createContext({});
+const [name, setName] = useState('hello world');
+const getName = () => {
+  return name;
+};
+
+export const Context = createContext({
+  name,
+  setName,
+  getName,
+});
