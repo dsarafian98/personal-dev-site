@@ -5,6 +5,7 @@
  * @format
  */
 
+import './resources/gesture-handler';
 import React, {createContext, useContext, useState} from 'react';
 import type {PropsWithChildren} from 'react';
 import {
@@ -29,11 +30,13 @@ import Home from './src/pages/Home';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import Feed from './src/pages/Feed';
+import Profile from './src/pages/Profile';
+import {createDrawerNavigator} from '@react-navigation/drawer';
 
 function App(): React.JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
   const Tab = createBottomTabNavigator();
+  const Drawer = createDrawerNavigator();
   const context = useContext(Context);
 
   const backgroundStyle = {
@@ -47,7 +50,7 @@ function App(): React.JSX.Element {
         <NavigationContainer>
           <Tab.Navigator>
             <Tab.Screen name="Home" component={Home} />
-            <Tab.Screen name="Feed" component={Feed} />
+            <Tab.Screen name="Profile" component={Profile} />
           </Tab.Navigator>
         </NavigationContainer>
       </Context.Provider>
