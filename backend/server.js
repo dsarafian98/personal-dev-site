@@ -1,18 +1,17 @@
-const express = require('express');
+import express from 'express';
+import cors from 'cors';
+import {log} from 'console';
+import users from './routes/helloWorld.js';
+
+const PORT = process.env.PORT || 3000;
+
 const app = express();
 
-app.get('/', (req, res) => {
-  res.send('<h1>root node</h1>');
-});
+app.use(cors());
+app.use(express.json());
+app.use('/user', users);
 
-//  include route files
-const helloWorldRoute = require('./routes/helloWorld');
-
-// use routes
-app.use('/helloWorld', helloWorldRoute);
-
-const port = process.env.PORT || 3000;
-
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
+//start server
+app.listen(PORT, () => {
+  log(`Server listening on port ${PORT}`);
 });
