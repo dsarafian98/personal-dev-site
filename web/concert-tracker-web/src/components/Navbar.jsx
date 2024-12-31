@@ -30,7 +30,7 @@ function Navbar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
   const pages = ['Home', 'Search', 'Friends'];
-  const settings = ['My Profile', 'Settings', 'Stats', 'Logout'];
+  const settings = ['Profile', 'Settings', 'Stats', 'Logout'];
   const navigate = useNavigate();
 
   const handleOpenNavMenu = event => {
@@ -48,7 +48,10 @@ function Navbar() {
     setAnchorElUser(null);
   };
 
-  const handleUserMenuNav = () => {};
+  const handleUserMenuNav = selectedSetting => {
+    let lowercase = selectedSetting.toLowerCase();
+    navigate('/' + lowercase);
+  };
 
   const handleNavigation = goToPage => {
     let lowercase = goToPage.toLowerCase();
@@ -121,7 +124,11 @@ function Navbar() {
                 open={Boolean(anchorElUser)}
                 onClose={handleCloseUserMenu}>
                 {settings.map(setting => (
-                  <MenuItem key={setting} onClick={handleUserMenuNav}>
+                  <MenuItem
+                    key={setting}
+                    onClick={() => {
+                      handleUserMenuNav(setting);
+                    }}>
                     <Typography sx={{textAlign: 'center'}}>
                       {setting}
                     </Typography>

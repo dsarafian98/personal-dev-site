@@ -1,5 +1,5 @@
 import {ObjectId} from 'mongodb';
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 const userConcertsSchema = new mongoose.Schema({
   _id: {type: ObjectId},
@@ -13,4 +13,4 @@ const userConcertsSchema = new mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model('UserConcert', userConcertsSchema);
+export default mongoose.model('UserConcert', userConcertsSchema);
