@@ -2,7 +2,7 @@ import {Avatar, Box, Card, CardContent, Grid2, Typography} from '@mui/material';
 import React, {useContext, useEffect, useState} from 'react';
 import Context from '../Context';
 
-function Profile() {
+function Experience() {
   const context = useContext(Context);
   const [pfp, setPfp] = useState(require('./../samplepfp.jpg'));
   const [userDetails, setUserDetails] = useState();
@@ -73,4 +73,4 @@ function Profile() {
   );
 }
 
-export default Profile;
+export default Experience;

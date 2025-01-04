@@ -1,7 +1,7 @@
 import {Box, Typography} from '@mui/material';
 import React, {useEffect, useState} from 'react';
 
-function Search() {
+function Projects() {
   //useEffect = () => {};
 
   /*const getUserData = async () => {
@@ -17,10 +17,10 @@ function Search() {
   return (
     <>
       <Box>
-        <Typography>Search for a concert</Typography>
+        <Typography>this is projects</Typography>
       </Box>
     </>
   );
 }
 
-export default Search;
+export default Projects;
