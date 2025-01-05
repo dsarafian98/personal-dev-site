@@ -1,5 +1,5 @@
 import React from 'react';
-import {Box, AppBar, Button, Drawer} from '@mui/material';
+import {Box, AppBar, Button, Drawer, Typography} from '@mui/material';
 import {Route, Routes, useNavigate} from 'react-router-dom';
 import Home from './../pages/Home';
 import About from './../pages/About';
@@ -7,7 +7,7 @@ import Experience from './../pages/Experience';
 import Projects from './../pages/Projects';
 
 function Navbar() {
-  const pages = ['Home', 'About', 'Experience', 'Education', 'Projects'];
+  const pages = ['Home', 'About', 'Experience', 'Projects'];
   const navigate = useNavigate();
 
   const handleNavigation = goToPage => {
@@ -34,6 +34,7 @@ function Navbar() {
             flexShrink: {sm: 0},
             alignSelf: 'center',
             justifyContent: 'center',
+            textAlign: 'center',
           }}>
           <Drawer
             variant="permanent"
@@ -46,6 +47,8 @@ function Navbar() {
               },
             }}
             open>
+            <Typography variant="h3">Danielle Sarafian</Typography>
+
             <Box sx={{alignSelf: 'center'}}>
               {pages.map((page, index) => (
                 <Button
@@ -57,8 +60,9 @@ function Navbar() {
                     display: 'flex',
                     flexDirection: 'column',
                     width: drawerWidth,
+                    '&:hover': {color: 'white', bgcolor: '#cfb8d1'},
                   }}>
-                  {page}
+                  <Typography variant="h6">{page}</Typography>
                 </Button>
               ))}
             </Box>

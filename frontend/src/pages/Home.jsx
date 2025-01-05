@@ -5,7 +5,7 @@ function Home(props) {
   return (
     <>
       <Box sx={{justifyContent: 'center', alignText: 'center'}}>
-        <Typography variant="h3">Danielle Sarafian</Typography>
+        <Typography>mama im home</Typography>
       </Box>
     </>
   );
