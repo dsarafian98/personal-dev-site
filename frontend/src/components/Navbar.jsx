@@ -1,61 +1,14 @@
-import React, {useState} from 'react';
-import {
-  Container,
-  Toolbar,
-  Typography,
-  Box,
-  AppBar,
-  IconButton,
-  Menu,
-  MenuItem,
-  Button,
-  Tooltip,
-  Avatar,
-  Drawer,
-  Divider,
-  List,
-  ListItem,
-  ListItemButton,
-  ListItemIcon,
-  ListItemText,
-} from '@mui/material';
-import MenuIcon from '@mui/icons-material/Menu';
-import MusicNoteOutlinedIcon from '@mui/icons-material/MusicNoteOutlined';
-import AddCircleOutlineOutlinedIcon from '@mui/icons-material/AddCircleOutlineOutlined';
-import {
-  RouterProvider,
-  createBrowserRouter,
-  Route,
-  Routes,
-  BrowserRouter,
-  useNavigate,
-  Link,
-} from 'react-router-dom';
+import React from 'react';
+import {Box, AppBar, Button, Drawer} from '@mui/material';
+import {Route, Routes, useNavigate} from 'react-router-dom';
 import Home from './../pages/Home';
 import About from './../pages/About';
 import Experience from './../pages/Experience';
 import Projects from './../pages/Projects';
 
 function Navbar() {
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
   const pages = ['Home', 'About', 'Experience', 'Education', 'Projects'];
   const navigate = useNavigate();
-
-  const handleOpenNavMenu = event => {
-    setAnchorElNav(event.currentTarget);
-  };
-  const handleOpenUserMenu = event => {
-    setAnchorElUser(event.currentTarget);
-  };
-
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
-  };
-
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
-  };
 
   const handleNavigation = goToPage => {
     console.log('navigation clicked');
